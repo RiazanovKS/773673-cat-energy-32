@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи»
 
-* Студент: [Кирилл Рязанов](https://up.htmlacademy.ru/adaptive/32/user/773673).
-* Наставник: `Неизвестно`.
+- Студент: [Кирилл Рязанов](https://up.htmlacademy.ru/adaptive/32/user/773673).
+- Наставник: [Евгения Подопригора](https://htmlacademy.ru/profile/id2387199).
 
 ---
 
