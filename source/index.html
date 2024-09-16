@@ -12,6 +12,8 @@
     <script src="scripts/index.js" defer></script>
   </head>
   <body class="page__body">
+    <h1 class="visually-hidden">Главная страница</h1>
+
     <header class="header">
       <div class="container">
 
@@ -148,6 +150,49 @@
         <div class="live-example__cost">
           <div class="live-example__cost-description">Затраты на питание: </div>
           <div class="live-example__cost-amount">15 000 руб.</div>
+        </div>
+        <div class="live-example__slider">
+          <picture>
+            <source
+              type="image/png"
+              media="(min-width: 768px)"
+              srcset="
+                ./images/life-example-before-tablet@1x.png 1x,
+                ./images/life-example-before-tablet@2x.png 2x
+              "
+              width="560"
+              height="512"
+            />
+            <img
+              class="live-example__image-before"
+              src="./images/life-example-before@1x.png"
+              srcset="./images/life-example-before@2x.png 2x"
+              alt="Картинка До"
+              width="280"
+              height="256"
+            />
+          </picture>
+          <picture>
+            <source
+              type="image/png"
+              media="(min-width: 768px)"
+              srcset="
+                ./images/life-example-after-tablet@1x.png 1x,
+                ./images/life-example-after-tablet@2x.png 2x
+              "
+              width="560"
+              height="512"
+            />
+            <img
+              class="live-example__image-after"
+              src="./images/life-example-after@1x.png"
+              srcset="./images/life-example-after@2x.png 2x"
+              alt="Картинка После"
+              width="280"
+              height="256"
+            />
+          </picture>
+          <div class="live-example__slider-control"></div>
         </div>
         <div class="live-example__slider">
           <picture>
