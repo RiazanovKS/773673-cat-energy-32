@@ -1,3 +1,7 @@
+.instruction {
+  counter-reset: step 0;
+}
+
 .instruction__title {
   font-family: $primary-font;
   font-size: 36px;
@@ -8,4 +12,40 @@
   font-family: $secondary-font;
   font-size: 14px;
   line-height: 18px;
+
+  counter-increment: step 1;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: $basic-green-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 32px;
+  }
+
+  &--nutrition::before {
+    background-image: url(../../icons/stack.svg#icon-leaf);
+  }
+
+  &--powder::before {
+    background-image: url(../../icons/stack.svg#icon-water);
+  }
+
+  &--meal::before {
+    background-image: url(../../icons/stack.svg#icon-eat);
+  }
+
+  &--result::before {
+    background-image: url(../../icons/stack.svg#icon-timer);
+  }
+
+  @media (min-width: $tablet-width) {
+    &::after {
+      content: counter(step);
+    }
+  }
+
 }

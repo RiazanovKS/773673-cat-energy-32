@@ -24,4 +24,42 @@
   &:active {
     opacity: 0.3;
   }
+
+  &:hover::after {
+    transform: scaleX(1.3);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 10px;
+
+    background-image: url(../../icons/stack.svg#icon-arrow-right);
+    background-size: cover;
+
+    transition: transform 0.3s ease;
+    transform-origin: left;
+  }
+}
+
+.program-card--slim {
+  &::before {
+    content: "";
+    background-image: url("../../icons/stack.svg#cat-slim");
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.program-card--pro {
+  &::before {
+    content: "";
+    background-image: url("../../icons/stack.svg#cat-power");
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+
 }

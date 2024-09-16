@@ -12,15 +12,23 @@
     <script src="scripts/index.js" defer></script>
   </head>
   <body class="page__body">
-    <h1 class="visually-hidden">Главная страница</h1>
-
     <header class="header">
       <div class="container">
 
         <nav class="navigation">
           <div class="navigation__logo">
             <a class="logo-image" href="index.html">
-              <img src="logo-image.png" alt="Логотип" width="34" height="34" />
+              <picture>
+                <source type="image/svg+xml" media="(min-width: 1440px)" srcset="./images/logo-cat-desktop.svg" >
+                <source type="image/svg+xml" media="(min-width: 768px)" srcset="./images/logo-cat-tablet.svg" >
+                <img src="./images/logo-cat-mobile.svg" alt="Логотип" width="33" height="38" />
+              </picture>
+            </a>
+            <a class="logo-text" href="index.html">
+              <picture>
+                <img src="./images/logo-text.svg" alt="Логотип" width="101" height="18" />
+              </picture>
+
             </a>
             <a class="logo-text" href="index.html">Cat Energy</a>
           </div>
@@ -83,43 +91,46 @@
 
     <main class="main container">
       <section class="programs">
-        <div class="program-card">
+        
+        <div class="program-card program-card--slim">
           <h3 class="program-card__title">Похудение</h3>
           <p class="program-card__description">
             Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.
           </p>
           <a class="program-card__link" href="form.html">Каталог slim</a>
         </div>
-        <div class="program-card">
-          <div class="program-card__heading">
-            <h3 class="program-card__title">Набор массы</h3>
-            <p class="program-card__description">
-              Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!
-            </p>
-            <a class="program-card__link" href="link-to.html">Каталог pro</a>
-          </div>
+
+        <div class="program-card program-card--pro">
+          <h3 class="program-card__title">Набор массы</h3>
+          <p class="program-card__description">
+            Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!
+          </p>
+          <a class="program-card__link" href="link-to.html">Каталог pro</a>
         </div>
       </section>
 
       <section class="instruction">
         <h2 class="instruction__title">Как это работает</h2>
 
-        <div class="instruction__step">
+        <div class="instruction__step instruction__step--nutrition">
           <p class="instruction__description">
             Функциональное питание содержит только полезные питательные вещества.
           </p>
         </div>
-        <div class="instruction__step">
+        
+        <div class="instruction__step instruction__step--powder">
           <p class="instruction__description">
             Выпускается в виде порошка, который нужно лишь залить кипятком и готово.
           </p>
         </div>
-        <div class="instruction__step">
+
+        <div class="instruction__step instruction__step--meal">
           <p class="instruction__description">
             Замените один-два приема обычной еды на наше функциональное питание.
           </p>
         </div>
-        <div class="instruction__step">
+
+        <div class="instruction__step instruction__step--result">
           <p class="instruction__description">
             Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!
           </p>
@@ -192,50 +203,7 @@
               height="256"
             />
           </picture>
-          <div class="live-example__slider-control"></div>
-        </div>
-        <div class="live-example__slider">
-          <picture>
-            <source
-              type="image/png"
-              media="(min-width: 768px)"
-              srcset="
-                ./images/life-example-before-tablet@1x.png 1x,
-                ./images/life-example-before-tablet@2x.png 2x
-              "
-              width="560"
-              height="512"
-            />
-            <img
-              class="live-example__image-before"
-              src="./images/life-example-before@1x.png"
-              srcset="./images/life-example-before@2x.png 2x"
-              alt="Картинка До"
-              width="280"
-              height="256"
-            />
-          </picture>
-          <picture>
-            <source
-              type="image/png"
-              media="(min-width: 768px)"
-              srcset="
-                ./images/life-example-after-tablet@1x.png 1x,
-                ./images/life-example-after-tablet@2x.png 2x
-              "
-              width="560"
-              height="512"
-            />
-            <img
-              class="live-example__image-after"
-              src="./images/life-example-after@1x.png"
-              srcset="./images/life-example-after@2x.png 2x"
-              alt="Картинка После"
-              width="280"
-              height="256"
-            />
-          </picture>
-          <div class="live-example__slider-control"></div>
+          <div class="live-example__slider-control"></div>∆
         </div>
       </section>
 
@@ -246,30 +214,38 @@
       </section>
     </main>
 
-        <footer class="footer container">
-      <a class="footer__logo logo-text" href="index.html">Cat Energy</a>
+    <footer class="footer container">
+      <a class="footer__logo-text logo-text" href="index.html">
+        <picture>
+          <img src="./images/logo-text.svg" alt="Логотип" width="101" height="18" />
+        </picture>
+      </a>
       <ul class="footer__socials">
         <li class="footer__social-item">
-          <a class="footer__social-link" href="#">
+          <a class="footer__social-link footer__social-link--vk" href="#">
             <span class="visually-hidden">VK</span>
-            <svg class="footer__social social" width="20" height="20"></svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a class="footer__social-link" href="#">
-            <span class="visually-hidden">YouTube</span>
-            <svg class="footer__social social" width="20" height="20"></svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a class="footer__social-link" href="#">
-            <span class="visually-hidden">Telegram</span>
-            <svg class="footer__social social" width="20" height="20"></svg>
           </a>
         </li>
 
+        <li class="footer__social-item">
+          <a class="footer__social-link footer__social-link--youtube" href="#">
+            <span class="visually-hidden">YouTube</span>
+          </a>
+        </li>
+
+        <li class="footer__social-item">
+          <a class="footer__social-link footer__social-link--telegram" href="#">
+            <span class="visually-hidden">Telegram</span>
+          </a>
+        </li>
       </ul>
-      <div class="footer__author"></div>
+
+      <a class="footer__author" href="#">
+        <span class ="footer__author-text">HTML Academy</span>
+        <svg class="footer__author-icon">
+          <use href="icons/stack.svg#icon-htmlacademy"></use>
+        </svg>
+      </a>
     </footer>
   </body>
 </html>
