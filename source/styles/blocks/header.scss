@@ -1,5 +1,39 @@
 .header {
-  background-color: #663399;
+  background-color: $basic-green-color;
+}
+
+.navigation__list {
+  list-style-type: none;
+}
+
+.navigation__link {
+  font-family: $primary-font;
+  font-size: 20px;
+  line-height: 20px;
+  color: $primary-text-color;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.header__title {
+  font-family: $primary-font;
+  font-size: 36px;
+  line-height: 36px;
   color: #ffffff;
-  padding: 10px 15px;
+  text-decoration: uppercase;
+}
+
+.header__slogan {
+  font-family: $primary-font;
+  font-size: 14px;
+  line-height: 14px;
+  color: #ffffff;
 }

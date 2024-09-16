@@ -1,0 +1,18 @@
+.button {
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 20px;
+  border: none;
+}
+
+.button--primary {
+  background-color: $basic-green-color;
+  color: $white-text-color;
+  text-transform: uppercase;
+}
+
+.button--secondary {
+  background-color: #f2f2f2;
+  color: $secondary-text-color;
+  text-transform: uppercase;
+}

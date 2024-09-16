@@ -1,0 +1,44 @@
+.live-example__title {
+  font-family: $primary-font;
+  font-size: 36px;
+  line-height: 40px;
+  color: $primary-text-color;
+}
+
+.live-example__history {
+  font-family: $secondary-font;
+  font-size: 14px;
+  line-height: 18px;
+  color: $secondary-text-color;
+}
+
+.live-example__metrics-count {
+  text-transform: uppercase;
+  font-family: $primary-font;
+  font-size: 24px;
+  line-height: 24px;
+  color: $primary-text-color;
+}
+
+.live-example__metrics-description {
+  font-family: $secondary-font;
+  font-size: 12px;
+  line-height: 12px;
+  color: $secondary-text-color;
+}
+
+.live-example__cost-description {
+  text-transform: uppercase;
+  font-family: $primary-font;
+  font-size: 14px;
+  line-height: 20px;
+  color: $primary-text-color;
+}
+
+.live-example__cost-amount {
+  text-transform: uppercase;
+  font-family: $primary-font;
+  font-size: 14px;
+  line-height: 20px;
+  color: $primary-text-color;
+}
