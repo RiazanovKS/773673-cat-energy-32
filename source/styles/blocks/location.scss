@@ -1,0 +1,45 @@
+.location {
+}
+
+.location__map {
+  display: block;
+  aspect-ratio: 320/362;
+  background-image: url(../../images/location@1x.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
+    aspect-ratio: 768/400;
+    background-image: url(../../images/location-tablet@1x.png);
+  }
+
+  @media screen and (min-width: $desktop-width) {
+    background-image: url(../../images/location-tablet@1x.png);
+    aspect-ratio: 1440/400;
+  }
+}
+
+.location__contacts {
+  background-color: #fff;
+}
+
+.location__contacts-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.location__contacts-title {
+  text-transform: uppercase;
+  font-family: $primary-font;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.location__contacts-address {
+  font-family: $secondary-font;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}

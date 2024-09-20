@@ -1,8 +1,46 @@
 .gift {
-  background-color: $basic-green-color;
+  grid-area: gift;
+  box-sizing: border-box;
+  width: 280px;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 60px;
+  background-image: linear-gradient(
+      to top,
+      rgba(104, 183, 56, 0.85),
+      rgba(104, 183, 56, 0.85)
+    ),
+    url(../../images/gift-background@2x.jpg);
+  background-size: cover;
+  background-position: center;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url(../../icons/icoт-gift.svg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
+    flex-direction: row;
+    width: 707px;
+    height: 200px;
+  }
+
+  @media screen and (min-width: $desktop-width) {
+    width: 245px;
+    height: 288px;
+  }
 }
 
 .gift__text {
+  text-align: center;
   font-family: $secondary-font;
   font-size: 16px;
   line-height: 20px;

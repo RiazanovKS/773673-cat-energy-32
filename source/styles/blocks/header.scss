@@ -1,43 +1,24 @@
 .header {
-  background-color: $basic-green-color;
-}
+  display: flex;
+  flex-direction: column;
 
-.navigation {
-  background-color: #ffffff;
-}
-
-.navigation__list {
-  list-style-type: none;
-}
-
-.navigation__link {
-  font-family: $primary-font;
-  font-size: 20px;
-  line-height: 20px;
-  color: $primary-text-color;
-  text-transform: uppercase;
-  text-decoration: none;
-
-  &:hover {
-    opacity: 0.6;
-  }
-
-  &:active {
-    opacity: 0.3;
+  @include media("desktop") {
+    background-image: linear-gradient(
+        to right,
+        transparent 50%,
+        rgba(104, 183, 56, 0.85) 50%
+      ),
+      url("../../images/promo-background@2x.jpg");
+    background-repeat: no-repeat;
+    background-size:
+      cover,
+      50% 100%;
+    background-position: right;
   }
 }
 
-.header__title {
-  font-family: $primary-font;
-  font-size: 36px;
-  line-height: 36px;
-  color: #ffffff;
-  text-decoration: uppercase;
-}
-
-.header__slogan {
-  font-family: $primary-font;
-  font-size: 14px;
-  line-height: 14px;
-  color: #ffffff;
+.header__navigation {
+  @include media("tablet", "desktop") {
+    margin-top: 25px;
+  }
 }

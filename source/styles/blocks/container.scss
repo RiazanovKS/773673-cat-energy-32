@@ -1,0 +1,12 @@
+.container {
+  max-width: 280px;
+  margin-inline: auto;
+
+  @include media("tablet") {
+    max-width: 708px;
+  }
+
+  @include media("desktop") {
+    max-width: 1220px;
+  }
+}

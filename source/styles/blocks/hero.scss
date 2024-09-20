@@ -1,0 +1,79 @@
+.hero {
+  padding-block: 25px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(104, 183, 56, 0.85) 325px,
+      transparent 325px
+    ),
+    url("../../images/promo-background@2x.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 325px;
+
+  @include media("tablet", "desktop") {
+    background-image: none;
+  }
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media("desktop") {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.hero__promo {
+  display: contents;
+  text-align: center;
+  color: $white-text-color;
+
+  @include media("tablet", "desktop") {
+    color: $primary-text-color;
+    text-align: left;
+    display: block;
+    max-width: 420px;
+  }
+}
+
+.hero__title {
+  color: inherit;
+  text-decoration: uppercase;
+  margin-bottom: 25px;
+
+  @include media("tablet") {
+    color: $primary-text-color;
+  }
+}
+
+.hero__text {
+  color: inherit;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+
+  @include media("tablet") {
+    color: $primary-text-color;
+  }
+}
+
+.hero__button {
+  align-self: stretch;
+  order: 1;
+
+  @include media("tablet", "desktop") {
+    padding-inline: 26px;
+  }
+}
+
+.hero__image {
+  grid-area: picture;
+  display: block;
+
+  @include media("tablet") {
+    margin-top: -70px;
+    z-index: -5;
+  }
+}

@@ -9,3 +9,32 @@
       url("../fonts/#{$font-src}.woff") format("woff");
   }
 }
+
+@mixin fluid-text($min: 14, $max: 60) {
+}
+
+@mixin link-reset {
+  color: inherit;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin button-reset {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+@mixin size($widtn, $height: $height) {
+  width: $widtn;
+  height: $height;
+}

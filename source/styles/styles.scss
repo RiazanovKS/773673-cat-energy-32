@@ -1,11 +1,16 @@
 /* GLOBAL */
 @import "./common/mixins.scss";
 @import "./common/variables.scss";
-@import "./common/global.scss";
 @import "./common/fonts.scss";
+@import "./common/media.scss";
+@import "./common/global.scss";
 
 /* BLOCKS */
+@import "./blocks/visually-hidden.scss";
+@import "./blocks/button.scss";
 @import "./blocks/header.scss";
+@import "./blocks/navigation.scss";
+@import "./blocks/hero.scss";
 @import "./blocks/program-card.scss";
 @import "./blocks/instruction.scss";
 @import "./blocks/live-example.scss";
@@ -14,7 +19,9 @@
 @import "./blocks/additional.scss";
 @import "./blocks/gift.scss";
 @import "./blocks/subscribe.scss";
+@import "./blocks/programs.scss";
+@import "./blocks/location.scss";
+@import "./blocks/catalog.scss";
 @import "./blocks/footer.scss";
+@import "./blocks/container.scss";
 @import "./blocks/page.scss";
-@import "./blocks/visually-hidden.scss";
-@import "./blocks/button.scss";
