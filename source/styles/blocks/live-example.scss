@@ -1,4 +1,37 @@
+.live-example {
+  background-color: #f2f2f2;
+}
+
+.live-example__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title title"
+    "history history"
+    "metrics metrics"
+    "cost cost"
+    "slider slider";
+
+  @media screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
+    grid-template-areas:
+      "title title"
+      "history history"
+      "metrics cost"
+      "slider slider";
+  }
+
+  @media screen and (min-width: $desktop-width) {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+      "title slider"
+      "history slider"
+      "metrics slider"
+      "cost slider";
+  }
+}
+
 .live-example__title {
+  grid-area: title;
   font-family: $primary-font;
   font-size: 36px;
   line-height: 40px;
@@ -6,10 +39,18 @@
 }
 
 .live-example__history {
+  grid-area: history;
   font-family: $secondary-font;
   font-size: 14px;
   line-height: 18px;
   color: $secondary-text-color;
+}
+
+.live-example__metrics {
+  grid-area: metrics;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .live-example__metrics-count {
@@ -27,6 +68,13 @@
   color: $secondary-text-color;
 }
 
+.live-example__cost {
+  grid-area: cost;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .live-example__cost-description {
   text-transform: uppercase;
   font-family: $primary-font;
@@ -41,4 +89,23 @@
   font-size: 14px;
   line-height: 20px;
   color: $primary-text-color;
+}
+
+.live-example__slider {
+  grid-area: slider;
+  position: relative;
+
+  @media screen and (min-width: $desktop-width) {
+    height: 100%;
+  }
+}
+
+.live-example__image-before {
+  display: block;
+}
+
+.live-example__image-after {
+  position: absolute;
+  inset: 0;
+  display: none;
 }

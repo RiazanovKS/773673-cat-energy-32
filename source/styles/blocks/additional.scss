@@ -1,4 +1,43 @@
+.additional {
+  @media screen and (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "title title title title"
+      "list list list gift";
+  }
+}
+
+.additional__goods-list {
+  grid-area: list;
+
+  @media screen and (min-width: $desktop-width) {
+    margin-right: 20px;
+  }
+}
+
+.additional__goods-item {
+  @media screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title prices"
+      "button button";
+  }
+
+  @media screen and (min-width: $desktop-width) {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "title prices button";
+  }
+}
+
 .additional__title {
+  grid-area: title;
   font-family: $primary-font;
   font-size: 24px;
   line-height: 24px;
@@ -6,6 +45,7 @@
 }
 
 .additional__goods-title {
+  grid-area: title;
   font-family: $primary-font;
   font-size: 16px;
   line-height: 16px;
@@ -14,8 +54,19 @@
 }
 
 .additional__goods-prices {
+  grid-area: prices;
   font-family: $secondary-font;
   font-size: 14px;
   line-height: 14px;
   color: $secondary-text-color;
+}
+
+.additional__gods-count {
+}
+
+.additional__gods-amount {
+}
+
+.additional__goods-button {
+  grid-area: button;
 }

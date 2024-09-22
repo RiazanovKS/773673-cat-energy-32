@@ -10,38 +10,51 @@
     <link rel="apple-touch-icon" href="favicons/apple.png" />
     <link rel="manifest" href="manifest.webmanifest" />
     <script src="scripts/index.js" defer></script>
+    <script src="scripts/navigation-dropdown.js" defer></script>
   </head>
 
   <body class="page__body">
     <nav class="navigation">
-      <div class="navigation__logo">
-        <div class="navigation__logo">
+      <div class="container navigation__container">
+        <div class="header__logo">
           <a class="logo-image" href="index.html">
-            <img src="logo-image.png" alt="Логотип" width="34" height="34" />
+            <picture>
+              <source type="image/svg+xml" media="(min-width: 1440px)" srcset="./images/logo-cat-desktop.svg" >
+              <source type="image/svg+xml" media="(min-width: 768px)" srcset="./images/logo-cat-tablet.svg" >
+              <img src="./images/logo-cat-mobile.svg" alt="Логотип" width="33" height="38" />
+            </picture>
           </a>
-          <a class="logo-text" href="index.html">Cat Energy</a>
+          <a class="logo-text" href="index.html">
+            <picture>
+              <img src="./images/logo-text.svg" alt="Логотип" width="101" height="18" />
+            </picture>
+          </a>
         </div>
+
+        <ul class="navigation__list js-navigation-dropdown" hidden>
+          <li class="navigation__item">
+            <a class="navigation__link navigation__link--active" href="index.html">Главная</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="catalog.html">Каталог продукции</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="link-to.html">Подбор программы</a>
+          </li>
+        </ul>
+
+        <button class="navigation__toggle js-toggle-button" type ="button">
+          <svg width="24" height="16">
+            <use href="icons/stack.svg#burger-menu"></use>
+          </svg>
+        </button>
       </div>
-
-      <ul class="navigation__list">
-        <li class="navigation__item">
-          <a class="navigation__link" href="index.html">Главная</a>
-        </li>
-        <li class="navigation__item">
-          <a class="navigation__link navigation__link--active" href="#">Каталог продукции</a>
-        </li>
-        <li class="navigation__item">
-          <a class="navigation__link" href="#">Подбор программы</a>
-        </li>
-      </ul>
-      <div class="navigation__toggle"></div>
     </nav>
+    <main class="main">
 
-    <h1 class="page__title">Каталог продукции</h1>
+      <h1 class="page__title">Каталог продукции</h1>
 
-    <main class="main container">
-      <section class="catalog">
-
+      <section class="catalog container">
         <div class="catalog__product-card product-card">
           <picture>
             <source
@@ -469,9 +482,7 @@
       </section>
 
       <section class="additional">
-
         <h2 class="additional__title">Дополнительные товары</h2>
-
         <div class="additional__goods-list">
 
           <div class="additional__goods-item">
@@ -480,6 +491,7 @@
               <span class="additional__gods-count">1 упаковка (100 г)</span>
               <span class="additional__goods-amount">200 р</span>
             </div>
+            <button class="additional__goods-button button button--primary" type="button">Заказать</button>
           </div>
 
           <div class="additional__goods-item">
@@ -488,6 +500,7 @@
               <span class="additional__gods-count">1 упаковка (100 г)</span>
               <span class="additional__goods-amount">200 р</span>
             </div>
+            <button class="additional__goods-button button button--primary" type="button">Заказать</button>
           </div>
 
           <div class="additional__goods-item">
@@ -496,6 +509,7 @@
               <span class="additional__gods-count">1 упаковка (100 г)</span>
               <span class="additional__goods-amount">200 р</span>
             </div>
+            <button class="additional__goods-button button button--primary" type="button">Заказать</button>
           </div>
 
           <div class="additional__goods-item">
@@ -504,18 +518,12 @@
               <span class="additional__gods-count">1 упаковка (100 г)</span>
               <span class="additional__goods-amount">200 р</span>
             </div>
+            <button class="additional__goods-button button button--primary" type="button">Заказать</button>
           </div>
 
         </div>
 
         <div class="additional__gift gift">
-          <img
-            class="gift-image"
-            src="image.jpg"
-            alt="Картиннка подарка"
-            height="40"
-            width="40"
-          />
           <p class="gift__text">
             Закажите все
             и получите чехол для
@@ -525,14 +533,17 @@
       </section>
 
       <section class="subscribe">
-        <h3 class="page__section-title">Акции и новики</h3>
 
-        <p class="subscribe__text">Подпишитесь на наши новости и не пропустите ни одного предложения!</p>
+        <div class="container subscribe__container">
+          <h3 class="page__section-title subscribe__title">Акции и новики</h3>
+          <p class="subscribe__text">Подпишитесь на наши новости и не пропустите ни одного предложения!</p>
 
-        <form class="subscribe__form">
-          <input class="subsribe__email" type="email" placeholder="kuklachev@gmail.com" required>
-          <button class ="subsribe__button button button--primary" type="submit">Подписаться</button>
-        </form>
+          <form class="subscribe__form">
+            <input class="subsribe__email" type="email" placeholder="kuklachev@gmail.com" required>
+            <button class ="subsribe__button button button--primary" type="submit">Подписаться</button>
+          </form>
+        </div>
+
       </section>
 
       <section class="location">
@@ -548,50 +559,31 @@
           <img src="./images/logo-text.svg" alt="Логотип" width="101" height="18" />
         </picture>
       </a>
-
       <ul class="footer__socials">
         <li class="footer__social-item">
-          <a class="footer__social-link" href="#">
+          <a class="footer__social-link footer__social-link--vk" href="#">
             <span class="visually-hidden">VK</span>
-            <svg class="footer__social-icon">
-              <use href="icons/stack.svg#icon-social-vk"></use>
-            </svg>
           </a>
         </li>
 
         <li class="footer__social-item">
-          <a class="footer__social-link" href="#">
+          <a class="footer__social-link footer__social-link--youtube" href="#">
             <span class="visually-hidden">YouTube</span>
-            <svg class="footer__social-icon">
-              <use href="icons/stack.svg#icon-social-youtube"></use>
-            </svg>
-
           </a>
         </li>
 
         <li class="footer__social-item">
-          <a class="footer__social-link" href="#">
+          <a class="footer__social-link footer__social-link--telegram" href="#">
             <span class="visually-hidden">Telegram</span>
-            <svg class="footer__social-icon">
-              <use href="icons/stack.svg#icon-social-telegram"></use>
-            </svg>
           </a>
         </li>
-        <li class="footer__social-item">
-          <a class="footer__social-link" href="#">
-            <span class="visually-hidden">Telegram</span>
-            <svg class="footer__social social" width="20" height="20"></svg>
-          </a>
-        </li>
-
       </ul>
-     
+
       <a class="footer__author" href="#">
         <span class ="footer__author-text">HTML Academy</span>
         <svg class="footer__author-icon">
           <use href="icons/stack.svg#icon-htmlacademy"></use>
         </svg>
       </a>
-    </footer>
-  </body>
+    </footer>  </body>
 </html>
