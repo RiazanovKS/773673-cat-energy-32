@@ -2,16 +2,26 @@
   grid-area: navigation;
   position: relative;
   background-color: #ffffff;
+  padding-top: 13px;
+  padding-bottom: 11px;
 
   @include media("tablet", "desktop") {
     background-color: transparent;
+  }
+
+  @include media("tablet") {
+    padding-block: 0;
   }
 }
 
 .navigation__inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+
+  @include media("tablet", "desktop") {
+    justify-content: space-between;
+  }
 }
 
 .navigation__logo {
@@ -24,6 +34,16 @@
   }
 }
 
+.navigation__logo-image {
+  padding: 0;
+  display: block;
+  margin-right: 56px;
+
+  @include media("tablet") {
+    margin-right: 0;
+  }
+}
+
 .navigation__list {
   @include list-reset;
 
@@ -33,34 +53,39 @@
   width: 100%;
 
   @include media("tablet", "desktop") {
+    position: static;
     display: flex;
     width: auto;
-    gap: 30px;
-    position: static;
+    gap: 33px;
     background-color: transparent;
+    margin-right: 5px;
   }
 }
 
 .navigation__item {
   background-color: #fff;
   border: 1px solid #e6e6e6;
+  padding-block: 10px;
 
   @include media("desktop") {
+    padding-block: 0;
     color: $white-text-color;
   }
 
   @include media("tablet", "desktop") {
+    padding-block: 0;
     border: none;
     background-color: transparent;
   }
 }
 
 .navigation__toggle {
+  margin-left: auto;
   border: none;
   cursor: pointer;
   background-color: transparent;
 
-  @media screen and (min-width: $tablet-width) {
+  @include media("tablet", "desktop") {
     display: none;
   }
 }
@@ -73,6 +98,11 @@
   font-size: 20px;
   line-height: 20px;
   text-transform: uppercase;
+  padding-block: 10px;
+
+  @include media("tablet") {
+    font-size: 18px;
+  }
 
   &:hover {
     opacity: 0.6;
@@ -80,5 +110,11 @@
 
   &:active {
     opacity: 0.3;
+  }
+}
+
+@include media("tablet", "desktop") {
+  .navigation__link--active {
+    border-bottom: 2px solid $basic-green-color;
   }
 }

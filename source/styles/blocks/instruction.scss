@@ -1,11 +1,24 @@
 .instruction {
   counter-reset: step 0;
+  padding-bottom: 49px;
+
+  @include media("tablet") {
+    padding-bottom: 37px;
+    border-bottom: 1px solid #e6e6e6;
+  }
 }
 
 .instruction__title {
   font-family: $primary-font;
   font-size: 36px;
   line-height: 40px;
+
+  margin-bottom: 40px;
+
+  @include media("tablet", "desktop") {
+    font-size: 60px;
+    margin-bottom: 50px;
+  }
 }
 
 .instruction__list {
@@ -14,20 +27,29 @@
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+  row-gap: 20px;
 
-  @media screen and (min-width: $tablet-width) {
+  @include media("tablet") {
+    column-gap: 135px;
+    row-gap: 37px;
+  }
+
+  @include media("desktop") {
+    justify-content: space-between;
   }
 }
 
 .instruction__step {
-  font-family: $secondary-font;
-  font-size: 14px;
-  line-height: 18px;
   width: 100%;
   display: flex;
-  gap: 10px;
+  column-gap: 20px;
+  align-items: center;
 
   counter-increment: step 1;
+
+  @include media("tablet", "desktop") {
+    align-items: flex-start;
+  }
 
   &::before {
     content: "";
@@ -40,6 +62,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px 32px;
+
+    @include media("tablet") {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   &--nutrition::before {
@@ -58,12 +85,32 @@
     background-image: url(../../icons/stack.svg#icon-timer);
   }
 
-  @media (min-width: $tablet-width) {
-    width: 250px;
-    gap: 80px;
+  @include media("tablet", "desktop") {
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 31px;
+
+    max-width: 250px;
+    min-height: 280px;
+
+    padding-block: 30px;
+
+    position: relative;
 
     &::after {
+      position: absolute;
+      top: -9px;
+      right: 22px;
+      z-index: -1;
+      font-size: 280px;
+      line-height: 1;
+      color: #f2f2f2;
       content: counter(step);
     }
   }
+}
+
+.instruction__description {
+  font-family: $secondary-font;
+  color: $secondary-text-color;
 }

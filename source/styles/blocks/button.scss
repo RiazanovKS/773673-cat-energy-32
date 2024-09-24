@@ -1,6 +1,9 @@
 .button {
   @include button-reset;
 
+  font-size: 16px;
+  line-height: 20px;
+
   display: block;
   cursor: pointer;
   padding-block: 10px;
@@ -8,13 +11,21 @@
   text-transform: uppercase;
 
   @include media("tablet", "desktop") {
-    padding-block: 14px;
+    padding-block: 10px;
   }
 }
 
 .button--primary {
   background-color: $basic-green-color;
   color: $white-text-color;
+}
+
+.button--large {
+  @include media("tablet") {
+    font-size: 20px;
+    line-height: 26px;
+    padding-block: 14px;
+  }
 }
 
 .button--secondary {
