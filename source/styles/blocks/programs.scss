@@ -1,6 +1,16 @@
 .programs {
   display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
   justify-content: center;
+
+  @include media("tablet") {
+    row-gap: 30px;
+  }
+
+  @include media("desktop") {
+    flex-direction: row;
+    column-gap: 80px;
+  }
 }

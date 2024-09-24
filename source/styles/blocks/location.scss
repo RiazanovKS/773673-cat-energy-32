@@ -1,4 +1,5 @@
 .location {
+  position: relative;
 }
 
 .location__map {
@@ -22,24 +23,67 @@
 
 .location__contacts {
   background-color: #fff;
+  padding-top: 30px;
+  padding-bottom: 5px;
+
+  @include media("tablet") {
+    padding-block: 60px;
+    padding-inline: 70px;
+  }
+
+  @include media("desktop") {
+    padding: 60px 80px;
+    width: 565px;
+
+    position: absolute;
+    top: 95px;
+    left: 10%;
+  }
 }
 
-.location__contacts-container {
+.location__contacts-inner {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+
+  min-height: 80px;
 }
 
 .location__contacts-title {
   text-transform: uppercase;
-  font-family: $primary-font;
   font-size: 16px;
-  font-weight: 400;
   line-height: 20px;
+
+  margin-right: 17px;
+
+  @include media("tablet", "desktop") {
+    max-width: 163px;
+
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
 
 .location__contacts-address {
   font-family: $secondary-font;
-  font-size: 14px;
-  font-weight: 400;
+  color: $secondary-text-color;
   line-height: 20px;
+
+  @include media("tablet", "desktop") {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 157px;
+    text-align: right;
+  }
+
+  @include media("desktop") {
+    align-self: stretch;
+    text-align: left;
+  }
+}
+
+.location__contacts-city {
+  color: inherit;
+  font-family: inherit;
 }

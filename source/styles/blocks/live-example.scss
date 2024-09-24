@@ -1,101 +1,193 @@
 .live-example {
   background-color: #f2f2f2;
+  padding-top: 25px;
+  padding-bottom: 40px;
+
+  @include media("tablet") {
+    padding-top: 45px;
+    padding-bottom: 101px;
+    background-color: none;
+    background: linear-gradient(to top, #eaeaea 461px, transparent 461px);
+  }
 }
 
-.live-example__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "title title"
-    "history history"
-    "metrics metrics"
-    "cost cost"
-    "slider slider";
+.live-example__inner {
+  @include media("desktop") {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 
-  @media screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
+.live-example__body {
+  margin-bottom: 20px;
+  @include media("tablet") {
+    margin-bottom: 71px;
+    display: grid;
+    grid-template-columns: 52% 1fr;
     grid-template-areas:
-      "title title"
-      "history history"
-      "metrics cost"
-      "slider slider";
+      "live-example-title live-example-title"
+      "live-example-history live-example-history"
+      "live-example-metrics live-example-cost";
   }
 
-  @media screen and (min-width: $desktop-width) {
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas:
-      "title slider"
-      "history slider"
-      "metrics slider"
-      "cost slider";
+  @include media("desktop") {
+    display: flex;
+    max-width: 436px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 }
 
 .live-example__title {
-  grid-area: title;
-  font-family: $primary-font;
-  font-size: 36px;
-  line-height: 40px;
-  color: $primary-text-color;
+  grid-area: live-example-title;
+  margin-bottom: 40px;
+
+  @include media("tablet") {
+    margin-bottom: 60px;
+  }
 }
 
 .live-example__history {
-  grid-area: history;
+  grid-area: live-example-history;
   font-family: $secondary-font;
-  font-size: 14px;
-  line-height: 18px;
   color: $secondary-text-color;
+
+  margin-bottom: 20px;
+
+  @include media("tablet") {
+    margin-bottom: 54px;
+  }
 }
 
 .live-example__metrics {
-  grid-area: metrics;
+  grid-area: live-example-metrics;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  margin-bottom: 34px;
+
+  @include media("desktop") {
+    gap: 40px;
+  }
+}
+
+.live-example__metrics-item {
+  position: relative;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+
+  width: 124px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  row-gap: 7px;
+
+  @include media("tablet", "desktop") {
+    width: 162px;
+    height: 72px;
+  }
 }
 
 .live-example__metrics-count {
   text-transform: uppercase;
-  font-family: $primary-font;
   font-size: 24px;
-  line-height: 24px;
-  color: $primary-text-color;
+  line-height: 1;
+
+  @include media("tablet") {
+    font-size: 30px;
+    line-height: 37px;
+  }
 }
 
 .live-example__metrics-description {
   font-family: $secondary-font;
-  font-size: 12px;
-  line-height: 12px;
   color: $secondary-text-color;
+  font-size: 12px;
+  line-height: 1;
+
+  position: absolute;
+  top: 47px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: block;
+  width: 87px;
+  text-align: center;
+  padding-inline: 15px;
+
+  background-color: #f2f2f2;
+
+  @include media("tablet") {
+    font-size: 14px;
+    top: 58px;
+    background-color: #fff;
+    width: 145px;
+    padding: 4px 0;
+  }
+
+  @include media("desktop") {
+    font-size: 14px;
+    width: 145px;
+    top: 62px;
+    padding-inline: 0;
+  }
 }
 
 .live-example__cost {
-  grid-area: cost;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  text-align: center;
+
+  @include media("tablet") {
+    font-size: 20px;
+    text-align: right;
+
+    margin-top: 10px;
+    margin-right: 1px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  @include media("desktop") {
+    font-size: 20px;
+    display: flex;
+    gap: 40px;
+  }
 }
 
 .live-example__cost-description {
   text-transform: uppercase;
-  font-family: $primary-font;
-  font-size: 14px;
-  line-height: 20px;
-  color: $primary-text-color;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+
+  &::after {
+    content: " ";
+  }
 }
 
 .live-example__cost-amount {
   text-transform: uppercase;
-  font-family: $primary-font;
-  font-size: 14px;
-  line-height: 20px;
-  color: $primary-text-color;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
 }
 
 .live-example__slider {
-  grid-area: slider;
+  grid-area: live-example-slider;
   position: relative;
 
-  @media screen and (min-width: $desktop-width) {
+  @include media("tablet") {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include media("desktop") {
     height: 100%;
   }
 }
